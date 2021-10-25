@@ -1,12 +1,12 @@
 public class Test {
     public static void main(String[] args) {
-        Student[] students1 = new Student[]{
+        Student[] students1 = new Student[] {
                 new Student("Ольга"),
                 new Student("Артём"),
                 new Student("Кирилл"),
                 new Student("Дарья")
         };
-        Student[] students2 = new Student[]{
+        Student[] students2 = new Student[] {
                 new Student("Виталий"),
                 new Student("Виталина"),
                 new Student("Анастасия"),

@@ -37,7 +37,7 @@ public class Test {
         mergeSort(students, lo, mid);
         mergeSort(students, mid + 1, hi);
         Student[] buf = new Student[students.length];
-        System.arraycopy(students, 0, buf,0, students.length);
+        System.arraycopy(students, 0, buf, 0, students.length);
         for (int k = lo; k <= hi; k++) {
             buf[k] = students[k];
         }

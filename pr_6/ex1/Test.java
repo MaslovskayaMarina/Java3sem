@@ -1,6 +1,6 @@
 public class Test {
     public static void main(String[] args) {
-        Student[] students = new Student[]{
+        Student[] students = new Student[] {
                 new Student(12, "Ольга"),
                 new Student(10, "Артём"),
                 new Student(189, "Кирилл"),

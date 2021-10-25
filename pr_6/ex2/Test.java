@@ -12,7 +12,7 @@ public class Test {
         }
         System.out.println();
         SortingStudentsByGPA temp;
-        quickSort(students, 0,students.length-1);
+        quickSort(students, 0, students.length - 1);
         System.out.println("Произошла быстрая сортировка по GPA!");
         System.out.println();
         for (Student s : students) {

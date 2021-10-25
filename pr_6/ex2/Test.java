@@ -1,6 +1,6 @@
 public class Test {
     public static void main(String[] args) {
-        Student[] students = new Student[]{
+        Student[] students = new Student[] {
                 new Student(12, "Ольга"),
                 new Student(10, "Артём"),
                 new Student(189, "Кирилл"),
@@ -27,7 +27,8 @@ public class Test {
         do {
             while (P.compare(current, source[leftMarker]) < 0) {
                 leftMarker++;
-            }while (P.compare(current, source[rightMarker]) > 0) {
+            }
+            while (P.compare(current, source[rightMarker]) > 0) {
                 rightMarker--;
             }
             if (leftMarker <= rightMarker) {
@@ -39,7 +40,8 @@ public class Test {
                 leftMarker++;
                 rightMarker--;
             }
-        } while (leftMarker <= rightMarker);
+        }
+        while (leftMarker <= rightMarker);
         if (leftMarker < rightBorder) {
             quickSort(source, leftMarker, rightBorder);
         }

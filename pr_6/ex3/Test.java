@@ -22,8 +22,8 @@ public class Test {
         }
         System.out.println();
         Student[] students3 = new Student[students1.length + students2.length];
-        System.arraycopy(students1, 0, students3,0,students1.length);
-        System.arraycopy(students2, 0, students3,students1.length, students2.length);
+        System.arraycopy(students1, 0, students3, 0, students1.length);
+        System.arraycopy(students2, 0, students3, students1.length, students2.length);
         mergeSort(students3, 0, students3.length-1);
         System.out.println("Произошла сортировка слиянием!");
         System.out.println();

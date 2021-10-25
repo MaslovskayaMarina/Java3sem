@@ -7,7 +7,7 @@ public class Student implements Comparable {
     }
     @Override
     public String toString() {
-        return "ID="+iDNumber+" Name= "+name;
+        return "ID= " + iDNumber + " Name= " + name;
     }
     @Override
     public int compareTo(Object o) {

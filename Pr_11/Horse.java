@@ -1,48 +1,42 @@
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Collections;
 
-public class HorseRace {
+public class Horse {
+    private String name;
+    private int speed, position;
 
-    public HorseRace(int n) {
-        Scanner sc = new Scanner(System.in);
-        String intpu;
-        Horse curHorse;
+    public static ArrayList<Horse> horses = new ArrayList<>();
 
-        for (int i = 1; i <= n; i++) {
-            System.out.printf("Введите имя лошади %d\n", i);
-            intpu = TestSynch.scan.next();
-            curHorse = new Horse(intpu);
-        }
+    public Horse(String name) {
+        setName(name);
+        horses.add(this);
+        speed = 30;
+        setPosition(0);
     }
 
-    public void startRace() {
-        for (int i = 0; i < Horse.horses.size(); i++) {
-            Horse.horses.get(i).setPosition(0);
-        }
+    public String getName() {
+        return name;
+    }
 
-        boolean isFinished = false;
-        do {
+    public void setName(String name) {
+        this.name = name;
+    }
 
-            for (int m = 0; m < Horse.horses.size(); m++) {
-                Horse.horses.get(m).run();
-                if (m != 0) {
-                    if (Horse.horses.get(m).getPosition() > Horse.horses.get(m-1).getPosition()) {
-                        Horse.swap(m, m-1);
-                    }
-                }
-            }
+    public void setPosition(int position) {
+        this.position = position;
+    }
 
-            for (int j = 0; j < Horse.horses.size(); j++) {
-                if (Horse.horses.get(j).getPosition() >= 1000) {
-                    isFinished = true;
-                }
-            }
-        } while (isFinished);
+    public int getPosition() {
+        return position;
+    }
 
-        System.out.println("\n\n-------------------------------------------------------\n");
+    public void run() {
+        position += (speed + (0 + (int)(Math.random() * 10)));
+    }
 
-        for (int q = 0; q < Horse.horses.size(); q++) {
-            System.out.printf("%d место: %s\n", q+1,Horse.horses.get(q).getName());
+    public static void swap(int first, int second) {
+        synchronized(Horse.class) {
+            Collections.swap(Horse.horses, first, second);
         }
     }
 }
